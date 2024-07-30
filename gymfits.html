@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GymFits | Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link href="/dist/output.css" rel="stylesheet"> -->
+    <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="home.css" />
+
+    <style>
+      body {
+        overflow-y: auto;
+      }
+
+      .mens img {
+        /* border: 2px solid red;  */
+        border-radius: 15px;
+        height: 100%;
+        width: 110%;
+        border-color: #9ecaed;
+        box-shadow: 0 0 20px #9ecaed;
+        transition: 0.4s ease all;
+        /* clear: both; */
+      }
+
+      .mens img:hover {
+        transform: scale(1.2);
+        box-shadow: 0 0 60px #9ecaed;
+        cursor: pointer;
+      }
+      .womens img {
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0 20px #c935e7;
+      }
+
+      .womens img:hover {
+        box-shadow: 0 0 60px #c935e7;
+      }
+      .main {
+        position: relative;
+        margin-top: 5%;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .mainbody1 img {
+        position: relative;
+      }
+
+      /* .mens{
+            width: auto;
+            border: 2px solid red;
+        } */
+
+      @media only screen and (max-width: 600px) {
+        .main {
+          margin-top: 5%;
+          position: relative;
+          display: flex;
+          /* border: 2px solid red; */
+          flex-direction: column;
+          width: 100%;
+
+          /* justify-content: center; */
+          /* align-items: center;
+                align-content: center; */
+        }
+        .mens img {
+          /* border: 2px solid red;  */
+          margin: 5%;
+          border-radius: 15px;
+          height: 100%;
+          width: 50%;
+          /* border-color:#9ecaed; */
+          box-shadow: 0 0 10px #9ecaed;
+          transition: 0.4s ease all;
+          /* clear: both; */
+        }
+        .womens img {
+          box-shadow: 0 0 10px #c935e7;
+          margin-bottom: 5%;
+        }
+
+        .mens {
+          height: 100%;
+          width: 100%;
+          margin-left: 17%;
+        }
+
+        .mens img:hover {
+          box-shadow: 0 0 40px #4ae2f6;
+        }
+        .womens img:hover {
+          box-shadow: 0 0 40px #c935e7;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        .msec {
+          display: none;
+        }
+        .cart-container {
+          color: white;
+          border: 2px solid cyan;
+          margin-bottom: 5em;
+          padding: 1em;
+          border-radius: 15px;
+          width: 90%;
+          margin-left: auto;
+        }
+        .addtocart {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="al">
+      <nav class="navbar navbar-dark navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">FitnessHub</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="nanv">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="workouts.html">Workouts</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.php">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link store" href="store.html"
+                    ><img
+                      class="store"
+                      src="images/shop2.jpg"
+                      height="70px"
+                      width="80px"
+                      alt=""
+                  /></a>
+                </li>
+
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li> -->
+              </ul>
+              <div class="sign">
+                <a href="signup_login.php" class="sup">
+                  <button class="signup">Signup | Login</button></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- <div class="mainbody1">
+            <img src="/images/pic2.jpg" class="mainbodyimg1" alt="Responsive image">
+        </div> -->
+    <div class="main">
+      <div class="mens">
+        <a href="gymfits_men.html"
+          ><img src="images/MensFit.jpg" alt="..."
+        /></a>
+      </div>
+      <div class="w">
+        <div class="mens womens">
+          <a href="gymfits_women.html"
+            ><img src="images/womenFit.jpg" alt="..."
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

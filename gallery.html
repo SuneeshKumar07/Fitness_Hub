@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="gallery.css"> -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- <link href="/dist/output.css" rel="stylesheet"> -->
+    <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="home.css">
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+      body{
+        overflow-x: hidden;
+      }
+/* 2 */
+.slider{
+	position: relative;
+	width: 80%;
+  margin: auto;
+  border: 2px solid cyan;
+  box-shadow: 0 0 30px #9ecaed;
+  margin-top: 2%;
+  border-radius: 2px;
+  transform: 0.4s all ease;
+}
+.slider:hover{
+  border: 2px solid rgb(220, 39, 223);
+  box-shadow: 0 0 30px #dc6ef5;
+  
+}
+.myslide{
+	height: auto;
+	display: none;
+	overflow: hidden;
+  animation-delay: 0ms;
+}
+
+.prev, .next{
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	font-size: 50px;
+	padding: 15px;
+	cursor: pointer;
+	color: #fff;
+	transition: 0.1s;
+	user-select: none;
+}
+.prev:hover, .next:hover{
+	color: #660066; 
+}
+.next{
+	right: 0;
+    animation-delay: 0ms;
+}
+.dotsbox{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	bottom: 20px;
+	cursor: pointer;
+}
+.dot{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	margin: 0 10px;
+	cursor: pointer;
+}
+/* /2 */
+
+/* javascript */
+.active, .dot:hover{
+	border-color: #660066; /* blue */
+}
+/* /javascript */
+
+/* muslide add fade */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 0ms;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-delay: 0ms;
+  display: none;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: 0.8}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: 0.8}
+  to {opacity: 1}
+}
+/* /muslide add fade */
+
+/* 3 */
+.txt{
+	position: absolute;
+	color: #fff;
+	letter-spacing: 2px;
+	line-height: 35px;
+	top: 40%;
+	left: 15%;
+	-webkit-animation-name: posi;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 0ms;
+  animation-name: posi;
+  animation-duration: 2s;
+  animation-delay: 0ms;
+	z-index: 1;
+}
+
+@-webkit-keyframes posi {
+  from {left: 25%;}
+  to {left: 15%;}
+}
+
+
+@keyframes posi {
+  from {left: 25%;}
+  to {left: 15%;}
+}
+
+.txt h1{
+	color: #f9eff9; /* blue */
+	font-size: 50px;
+	margin-bottom: 20px;
+}
+.txt p{
+	font-weight: bold;
+	font-size: 20px;
+}
+/* /3 */
+
+/* 4 */
+#image1, #image2, #image3, #image4, #image5{
+	transform: scale(1.5, 1.5);
+	-webkit-animation-name: zoomin;
+  -webkit-animation-duration: 40s;
+  -webkit-animation-delay: 0ms;
+  animation-name: zoomin;
+  animation-duration: 40s;
+  animation-delay: 0ms;
+  filter: brightness(50%);
+}
+@-webkit-keyframes zoomin {
+  from {transform: scale(1, 1);}
+  to {transform: scale(1.5, 1.5);}
+}
+@keyframes zoomin {
+  from {transform: scale(1, 1);}
+  to {transform: scale(1.5, 1.5);}
+}
+/* /4 */
+
+/* 5 */
+@media screen and (max-width: 800px){
+	.myslide{
+		height: 500px;
+	}
+	.txt{
+		letter-spacing: 2px;
+		line-height: 25px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-webkit-animation-name: posi2;
+		-webkit-animation-duration: 2s;
+    -webkit-animation-delay: 0ms;
+		animation-name: posi2;
+		animation-duration: 2s;
+    animation-delay: 0ms;
+    display: none;
+	}
+
+	@-webkit-keyframes posi2 {
+	  from {top: 35%;}
+	  to {top: 50%;}
+	}
+
+	@keyframes posi2 {
+	  from {top: 35%;}
+	  to {top: 50%;}
+	}
+
+	.txt h1{
+		font-size: 40px;
+	}
+	.txt p{
+		font-size: 13px;
+	}
+
+}
+/* /5 */
+
+/* 6 */
+@media screen and (max-width: 520px){
+	.txt h1{
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+	.sign{
+		margin-right: 20px;
+	}
+	.sign a{
+		font-size: 12px;
+	}
+}
+/* /6 */
+
+.button {
+    border-radius: 12px;
+    height: 48px;
+    width: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 200ms linear;
+    padding: 0 30px;
+	  margin-top: 30px;
+	  margin-bottom: 30px;
+    letter-spacing: 1px;
+	  margin-left: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    text-align: center;
+    border: none;
+    background-color: #660066;
+    color: #fff;
+    box-shadow: 0 3px 2px 0 #fff
+}
+
+
+.button:active,
+.button:focus {
+    background-color: #fff;
+    color: black;
+    box-shadow: 0 8px 24px 0 rgba(255, 255, 255, .2)
+}
+
+.button:hover {
+    background-color: #fff;
+    color: black;
+    box-shadow: 0 8px 24px 0 rgba(255, 255, 255, .2)
+}
+
+button .active{
+  background: #fff;
+  color: black;
+}
+
+.wrapper{
+	width: 90%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 20px;
+	transition: .5s ease-in-out;
+}
+.wrapper:hover{
+	filter: brightness(80%);
+}
+
+.pic{
+	position: relative;
+	height: 70%;
+  width: auto;
+	/* border-radius: 10px; */
+	box-shadow: 3px 3px 5px #660066;
+	cursor: pointer;
+	transition: .5s;
+}
+.pic img{
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	transition: .5s;
+}
+.wrapper img:hover{
+	transform: scale(1.1);
+}
+.pic video{
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	transition: .5s;
+}
+.wrapper video:hover{
+  transition: .2s linear;
+	transform: scale(1.1);
+}
+.wrapper .Videos .active{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: auto;
+  box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.preview-box{
+	position: fixed;
+	max-width: 700px;
+	width: auto;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	z-index: 5;
+	transform: translate(-50%, -50%);
+	background: #660066;
+	padding: 0 5px 5px 5px;
+	opacity: 0;
+	pointer-events: none;
+	border-radius: 3px;
+	box-shadow: 0px 0px 15px white;
+  
+}
+.preview-box.show{
+	opacity: 1;
+	pointer-events: auto;
+	transform: translate(-50%, -50%) scale(1.2);
+	transition: all 0.3s ease;
+}
+.preview-box .details{
+	display: flex;
+	align-items: center;
+	padding: 12px 15px 12px 10px;
+	justify-content: space-between;
+}
+.preview-box .details .icon{
+	color: #fff;
+	cursor: pointer;
+	font-size: 20px;
+}
+.title{
+	color: #fff;
+}
+.details .title{
+	display: flex;
+	font-size: 18px;
+	font-weight: 400;
+}
+.details .title p{
+	margin: 0 5px;
+}
+.details .title p.current-img{
+	font-weight: 500;
+}
+.preview-box .img-box{
+	display: flex;
+	width: 100%;
+	position: relative;
+}
+.img-box .slide{
+	position: absolute;
+	top: 50%;
+	z-index: 3;
+	transform: translateY(-50%);
+	font-size: 30px;
+	cursor: pointer;
+	color: #fff;
+	width: auto;
+	height: auto;
+	line-height: 50px;
+	text-align: center;
+	border-radius: 3px;
+}
+.img-box .slide.prev{
+	left: 0px;   
+}
+.img-box .slide.next{
+	right: 0px;
+}
+.preview-box .img-box img{
+	width: 100%;
+	border-radius: 0 0 3px 3px;
+}
+.preview-box .img-box video{
+	width: 100%;
+	border-radius: 0 0 3px 3px;
+}
+.img-box img{
+	width: 300px;
+	height: 400px;
+}
+.img-box video{
+	width: auto;
+	height: auto;
+}
+
+.shadow{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: none;
+	background: rgba(0, 0, 0, 0.45);
+	z-index: 2;
+}
+
+@media (max-width: 1000px){
+	.pic img{
+		width: calc(100%/3);
+	}
+}
+@media (max-width: 800px){
+	.pic img{
+		padding: 4px;
+		width: calc(100%/3);
+	}
+}
+@media (max-width: 1000px){
+	.pic video{
+		width: calc(100%/3);
+	}
+}
+@media (max-width: 800px){
+	.pic video{
+		padding: 4px;
+		width: calc(100%/3);
+	}
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="al">
+        <nav class="navbar navbar-dark navbar-expand-lg">
+            <div class="container-fluid ">
+              <a class="navbar-brand" href="index.html">FitnessHub</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              
+              <div class="nanv">
+              <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                  <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="gallery.html">Gallery</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="workouts.html">Workouts</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.php">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link store" href="store.html"
+                      ><img
+                        class="store"
+                        src="images/shop2.jpg"
+                        height="70px"
+                        width="80px"
+                        alt=""
+                    /></a>
+                  </li>
+                  
+    
+                  <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li> -->
+                  
+                </ul>
+                <div class="sign">
+                <a href="signup_login.php" class="sup"> <button class="signup">Signup | Login</button></a> 
+              </div>
+                
+            </div>
+               
+              </div>
+            </div>
+          </nav>
+          <div class="slider">
+  
+            <div class="myslide fade">
+              <div class="txt">
+                <h1>Believe</h1>
+                
+              </div>
+              <img id="image1" src="gym/gym1.jpg" style="width: 100%; height: 100%;">
+            </div>
+            
+            <div class="myslide fade">
+              <div class="txt">
+                <h1>In Yourself</h1>
+                
+              </div>
+              <img id="image2" src="gym/gym2.jpg" style="width: 100%; height: 100%;">
+            </div>
+            
+            <div class="myslide fade">
+              <div class="txt">
+                <h1>You</h1>
+                
+              </div>
+              <img id="image3" src="gym/gym3.jpg" style="width: 100%; height: 100%;">
+            </div>
+            
+            <div class="myslide fade">
+              <div class="txt">
+                <h1>Will be</h1>
+                
+              </div>
+              <img id="image4" src="gym/gym4.jpg" style="width: 100%; height: 100%;">
+            </div>
+            
+            <div class="myslide fade">
+              <div class="txt">
+                <h1>Unstoppable</h1>
+                
+              </div>
+              <img id="image5" src="gym/gym5.jpg" style="width: 100%; height: 100%;">
+            </div>
+            <!-- /fade css -->
+            
+            <div class="dotsbox" style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
+              <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+            <!-- /onclick js -->
+          </div>
+
+          <div class="top" align="center">
+            <button class="button active" data-filter="All">All</button> 
+            <button class="button " data-filter="Images">Images</button> 
+            <button class="button " data-filter="Videos">Videos</button> 
+          <!-- </div> -->
+          
+          <div class="wrapper">
+            <div class="pic Images">
+              <span><img src="gym/gym6.jpg"></span>
+            </div>
+            <div class="pic Images">
+              <span><img src="gym/gym7.jpg"></span>
+            </div>
+            <div class="pic Images">
+              <span><img src="gym/gym8.jpg"></span>
+            </div>
+            <div class="pic Images">
+              <span><img src="gym/gym9.jpg"></span>
+            </div>
+            <div class="pic Images">
+              <span><img src="gym/gym10.jpg"></span>
+            </div>
+            <div class="pic Images">
+              <span><img src="gym/gym11.jpg"></span>
+            </div>
+            <div class="pic Images">
+              <span><img src="gym/gym12.jpg"></span>
+            </div>
+            <div class="pic Images">
+              <span><img src="gym/gym13.jpeg"></span>
+            </div>
+            <div class="pic Images">
+              <span><img src="gym/gym14.jpeg"></span>
+            </div>
+            <div class="pic Images">
+              <span><img src="gym/gym15.jpeg"></span>
+            </div>
+            <div class="pic Images">
+              <span><img src="gym/gym16.jpeg"></span>
+            </div>
+            <div class="pic Videos">
+              <video src="gym/Anurag.mp4">
+            </div>
+          </div>
+        
+
+          <div class="preview-box">
+            <div class="details">
+              <span class="title">
+                Image <p class="current-img"></p>
+                of <p class="total-img"></p>
+              </span>
+              <span class="icon fas fa-times"></span>
+            </div>
+            <div class="img-box">
+              <div class="slide prev">
+                <i class="fas fa-angle-left"></i>
+              </div>
+              <div class="slide next">
+                <i class="fas fa-angle-right"></i>
+              </div>
+              <img src="">
+            </div>
+          </div>
+
+          <div class="shadow"></div>
+
+          <!-- <script src="button.js"></script> -->
+        
+        <script>
+          const myslide = document.querySelectorAll('.myslide'),
+	  dot = document.querySelectorAll('.dot');
+let counter = 1;
+slidefun(counter);
+
+let timer = setInterval(autoSlide, 2050);
+function autoSlide() {
+	counter += 1;
+	slidefun(counter);
+}
+function plusSlides(n) {
+	counter += n;
+	slidefun(counter);
+	resetTimer();
+}
+function currentSlide(n) {
+	counter = n;
+	slidefun(counter);
+	resetTimer();
+}
+function resetTimer() {
+	clearInterval(timer);
+    timer = setInterval(autoSlide, 2050);
+}
+
+function slidefun(n) {
+	
+	let i;
+	for(i = 0;i<myslide.length;i++){
+		myslide[i].style.display = "none";
+	}
+	for(i = 0;i<dot.length;i++) {
+		dot[i].className = dot[i].className.replace(' active', '');
+	}
+	if(n > myslide.length){
+	   counter = 1;
+	   }
+	if(n < 1){
+	   counter = myslide.length;
+	   }
+	myslide[counter - 1].style.display = "block";
+	dot[counter - 1].className += " active";
+}
+const pic = document.querySelectorAll(".pic"),
+previewBox = document.querySelector(".preview-box"),
+previewImg = previewBox.querySelector("img"),
+closeIcon = previewBox.querySelector(".icon"),
+currentImg = previewBox.querySelector(".current-img"),
+totalImg = previewBox.querySelector(".total-img"),
+shadow = document.querySelector(".shadow");
+
+window.onload = ()=>{
+    for (let i = 0; i < pic.length; i++) {
+        totalImg.textContent = pic.length;
+        let newIndex = i;
+        let clickedImgIndex;
+        pic[i].onclick = ()=>{   
+            clickedImgIndex = newIndex;
+            console.log(i);
+            function preview(){
+                currentImg.textContent = newIndex + 1;
+                let selectedImgUrl = pic[newIndex].querySelector("img").src;//getting user clicked img url
+                previewImg.src = selectedImgUrl;
+            }
+            preview();
+
+            const prevBtn = document.querySelector(".prev");
+            const nextBtn = document.querySelector(".next");
+            if(newIndex == 0){
+                preview();
+                prevBtn.style.display = "none";
+            }
+            if(newIndex >= pic.length - 1){
+                preview();
+                nextBtn.style.display = "none";
+            }
+            prevBtn.onclick = ()=> {
+                newIndex--;
+                if(newIndex == 0){
+                    preview();
+                    prevBtn.style.display = "none";
+                }else{
+                    preview();
+                    nextBtn.style.display = "block";
+                }
+            }
+
+            nextBtn.onclick = ()=> {
+                newIndex++;
+                if(newIndex >= pic.length - 1){
+                    preview();
+                    nextBtn.style.display = "none";
+
+                }else{
+                    preview();
+                    prevBtn.style.display = "block";
+                }
+            }
+
+        // document.querySelector("body").style.overflow = "hidden";
+        previewBox.classList.add("show");
+        shadow.style.display = "block";
+
+        closeIcon.onclick = ()=>{
+            newIndex = clickedImgIndex;
+            prevBtn.style.display = "block";
+            nextBtn.style.display = "block";
+            previewBox.classList.remove("show");
+            shadow.style.display = "none";
+            document.querySelector("body").style.overflow = "scroll";
+        }
+    }
+}
+}
+
+(function(){
+    const buttons = document.querySelectorAll('.button')
+    const images = document.querySelectorAll('.pic')
+    
+    buttons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault()
+            const filter = e.target.dataset.filter
+
+            images.forEach((image) => {
+                if(filter === 'All'){
+                    image.style.display = 'block'
+                }else{
+                    if(image.classList.contains(filter)){
+                        image.style.display = 'block'
+                    }else{
+                        image.style.display = 'none'
+                    }
+                }
+            })
+        })
+    })
+})();
+
+var video = document.querySelectorAll('video')
+video.forEach(play => play.addEventListener('click', () =>{
+  play.classList.toggle('active');
+  if(play.paused){
+    play.play();
+  }else{
+    play.pause();
+    play.currentTime = 0;
+  }
+}));
+  
+  </script>    
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous">
+    </script>
+</body>
+</html>

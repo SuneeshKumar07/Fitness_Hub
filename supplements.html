@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supplements</title>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link href="/dist/output.css" rel="stylesheet"> -->
+    <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="home.css" />
+
+    <style>
+      .StoreMen {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        flex-direction: row;
+        margin-top: 2%;
+        margin-bottom: 4%;
+      }
+
+      .card {
+        border: none;
+        height: auto;
+        margin: 15px;
+        width: 24rem;
+        /* margin-left: ; */
+      }
+
+      .card img {
+        border-radius: 50px;
+      }
+
+      .btn {
+        padding: 2.2%;
+        width: 45%;
+      }
+      .btn1 {
+        width: 45%;
+        margin: 1.3%;
+        /* position:absolute; */
+        /* right: 15%; */
+      }
+      @media only screen and (max-width: 600px) {
+        .StoreMen {
+          flex-direction: column;
+          /* width: 70%; */
+          padding: 2em;
+          /* margin-left: 15%; */
+        }
+
+        .card {
+          padding: 5px;
+          width: 20rem;
+        }
+
+        .addtocart {
+          width: 100%;
+        }
+      }
+
+      .addtocart {
+        /* border: 2px solid red; */
+        color: white;
+        background-color: rgb(194, 39, 228);
+        border: 2px solid rgb(194, 39, 228);
+        width: 50%;
+        padding: 0.5em;
+        border-radius: 15px;
+        transition: 0.2s all ease-in-out;
+      }
+      .addtocart:hover {
+        background-color: aqua;
+        border: 2px solid aqua;
+        letter-spacing: 0.08em;
+      }
+      .addtocart a {
+        text-decoration: none;
+        color: black;
+      }
+      .cart-container {
+        /* border: 2px solid red; */
+        width: 40%;
+        margin-left: 7%;
+        margin-top: 10%;
+        transform: scale(1.2);
+      }
+      .btne {
+        /* margin-top: 2%; */
+        width: auto;
+
+        border: 2px solid rgb(194, 39, 228);
+        color: white;
+        background-color: rgb(194, 39, 228);
+        /* margin-bottom: 2em; */
+        /* height: 3em; */
+        align-items: center;
+      }
+      .btnc {
+        /* margin-top: 2%; */
+        width: auto;
+        border: 2px solid rgb(194, 39, 228);
+        color: white;
+        background-color: rgb(194, 39, 228);
+        /* margin-bottom: 2em;
+        height: 3em; */
+      }
+
+      .itemsquantity {
+        /* margin-left: ; */
+        border-right: 2px solid rgb(110, 106, 106);
+        margin-bottom: 10px;
+      }
+
+      #carttable tr td {
+        border-right: 2px solid rgb(117, 112, 112);
+        padding: 1.3em;
+        /* margin: 2em; */
+      }
+
+      .prd {
+        margin-left: 1.2em;
+      }
+      .prc {
+        margin-left: 1.2em;
+      }
+
+      .cart-buttons {
+        margin-top: 1.2em;
+        margin-bottom: 1.2em;
+      }
+
+      #carttotals {
+        margin-left: 1.2em;
+      }
+      .cart-container {
+        color: white;
+        border: 2px solid cyan;
+        margin-bottom: 5em;
+        padding: 2em;
+        border-radius: 15px;
+      }
+      .cart-container h2 {
+        margin-left: 0.6em;
+        margin-bottom: 2em;
+        border-bottom: 2px solid rgb(225, 61, 214);
+        width: 30%;
+        text-align: center;
+        border-radius: 0px;
+      }
+      @media only screen and (max-width: 600px) {
+        .cart-container {
+          color: white;
+          border: 2px solid cyan;
+          margin-bottom: 5em;
+          padding: 1em;
+          border-radius: 15px;
+          width: 90%;
+          margin-left: auto;
+        }
+        .addtocart {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="al">
+      <nav class="navbar navbar-dark navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">FitnessHub</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="nanv">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="workouts.html">Workouts</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.php">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link store" href="store.html"
+                    ><img
+                      class="store"
+                      src="images/shop2.jpg"
+                      height="70px"
+                      width="80px"
+                      alt=""
+                  /></a>
+                </li>
+
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li> -->
+              </ul>
+              <div class="sign">
+                <a href="signup_login.php" class="sup">
+                  <button class="signup">Signup | Login</button></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="StoreMen">
+      <div class="card Productcont">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0291/3743/6771/products/PGWwithFDA_1024x1024.jpg?v=1647841922"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body product">
+          <h5 class="productname">Whey Protein</h5>
+          <h3 class="price">₹3999</h3>
+
+          <button class="addtocart">
+            <a href="" class="">Add to Cart</a>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://cdn.healthxp.in/wp-content/uploads/2019/07/Muscle-Mass-Gainer-With-Whey-Protein-Powder-Body-Building-Supplement-Chocolate-3-kg.jpg
+            "
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body product">
+          <h5 class="productname">Mass Gainer</h5>
+          <h3 class="price">₹2099</h3>
+
+          <button class="addtocart">
+            <a href="" class="">Add to Cart</a>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://www.e-supplement.com.tr/wp-content/uploads/2020/01/optimum_gold_standard_whey_protein_tozu_2273_gr-300x300.jpeg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body product">
+          <h5 class="productname">Standard Whey Protein</h5>
+          <h3 class="price">₹1499</h3>
+
+          <button class="addtocart">
+            <a href="" class="">Add to Cart</a>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://5.imimg.com/data5/KF/RT/WB/SELLER-13684189/5-lbs-muscle-pharm-combat-protein-powder-500x500.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body product">
+          <h5 class="productname">Combat Whey Protein</h5>
+          <h3 class="price">₹3499</h3>
+
+          <button class="addtocart">
+            <a href="" class="">Add to Cart</a>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="StoreMen">
+      <div class="card">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0009/1943/7372/products/best-creatine-monohydrate-powder-supplement-india.jpg?v=1657805204"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body product">
+          <h5 class="productname">Creatine Monohydrate Powder</h5>
+          <h3 class="price">₹1049</h3>
+
+          <button class="addtocart">
+            <a href="" class="">Add to Cart</a>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://5.imimg.com/data5/OP/GH/MY-30597233/fitness-supplements2-500x500.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body product">
+          <h5 class="productname">Creatine Powder</h5>
+          <h3 class="price">₹1999</h3>
+
+          <button class="addtocart">
+            <a href="" class="">Add to Cart</a>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://m.media-amazon.com/images/I/71TQzpGFK5L._SY450_.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body product">
+          <h5 class="productname">Creatine Monohydrate Unflavoured</h5>
+          <h3 class="price">₹3099</h3>
+
+          <button class="addtocart">
+            <a href="" class="">Add to Cart</a>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/irxx1ivtc1cr8yzfdoy9.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body product">
+          <h5 class="productname">MuscleBlaze Creatine Monohydrate</h5>
+          <h3 class="price">₹4599</h3>
+
+          <button class="addtocart">
+            <a href="" class="">Add to Cart</a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-container">
+      <h2>Cart</h2>
+      <table>
+        <thead>
+          <tr>
+            <th><strong class="prd">Product</strong></th>
+            <th><strong class="prc">Price</strong></th>
+          </tr>
+        </thead>
+        <tbody id="carttable"></tbody>
+      </table>
+      <hr />
+      <table id="carttotals">
+        <tr>
+          <td class="prc"><strong>Items</strong></td>
+          <td class="prc"><strong>Total</strong></td>
+        </tr>
+        <tr>
+          <td class="itemsquantity">x <span id="itemsquantity">0</span></td>
+          <td>₹<span id="total">0</span></td>
+        </tr>
+      </table>
+
+      <div class="cart-buttons">
+        <button id="emptycart" class="btn btne">Empty Cart</button>
+        <a href="cpay.php"
+          ><button id="checkout" class="btn btnc">Checkout</button></a
+        >
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

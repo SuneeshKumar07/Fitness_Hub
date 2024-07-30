@@ -1,0 +1,45 @@
+*{
+    margin:0;
+    padding: 0;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+body{
+    overflow-x: hidden;
+    font-family: DynaPuff;
+    background-color: black;
+    
+}
+.main h1{
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 80px;
+    color: #fff;
+    
+}
+.videoes{
+    margin-top: 7rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.vid{
+    
+    background: #222;
+    border-radius: 1rem;
+    text-align: center;
+    border: 0.2rem solid #111;
+    transition: 0.3s all ease-in-out;
+}
+/*  {
+    background: #222;
+    border-radius: 1rem;
+    padding: 3rem;
+    text-align: center;
+    border: 0.2rem solid #111;
+  } */
+  
+  .vid:hover {
+    border: 0.3rem solid #29d9d5;
+  }
+  

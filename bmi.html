@@ -1,0 +1,366 @@
+<head>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+    crossorigin="anonymous"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Quicksand:400,700"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="home.css" />
+  <style>
+    * {
+      /* font-family: Quicksand; */
+      /* font-size: 16px; */
+      color: #333;
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      padding: 0;
+      border: 0;
+      background: linear-gradient(rgba(3, 0, 3, 1), rgba(66, 1, 77, 0.5)),
+        url("images/sbg.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      overflow-x: hidden;
+    }
+    .form {
+      background-color: #fff;
+      height: 240px;
+      width: 450px;
+      border-radius: 20px;
+      margin: 20px auto 20px auto;
+      display: block;
+      border: solid 1px #289df6;
+      box-shadow: 0 0 20px 0 #ddd;
+    }
+    .form:hover {
+      box-shadow: 0 0 30px 0 #ccc;
+      transition: 0.4s;
+      transform: scale(1.02);
+    }
+    .row-one {
+      padding: 20px;
+    }
+    .row-two {
+      padding: 20px;
+    }
+    .text-input {
+      width: 60px;
+      height: 30px;
+      border-radius: 10px;
+      background-color: #dbeffe;
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .text-input:last-child {
+      margin-bottom: 35px;
+    }
+    .text-input:hover {
+      background-color: #cbe7fd;
+    }
+    #submit {
+      border: none;
+      border-radius: 10px;
+      height: 40px;
+      width: 140px;
+      background-color: #c814c8;
+      color: #fff;
+      margin: auto;
+      display: block;
+      outline: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    #submit:hover {
+      background-color: #660066;
+      letter-spacing: 0.2em;
+    }
+    .text {
+      display: inline-block;
+      margin: 5px 20px 5px 8px;
+    }
+    .row-one {
+      padding: 30px 20px 15px 20px;
+    }
+    .row-two {
+      padding: 15px 20px 30px 20px;
+    }
+    .containern {
+      display: inline-block;
+      position: relative;
+      padding-left: 30px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .containern input {
+      position: absolute;
+      opacity: 0;
+    }
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #dbeffe;
+      border-radius: 50%;
+    }
+    .containern:hover input ~ .checkmark {
+      background-color: #cbe7fd;
+    }
+    .containern input:checked ~ .checkmark {
+      background-color: #289df6;
+    }
+
+    h3 {
+      font-size: 1.7rem;
+      font-weight: 300;
+      color: #a4abb0;
+      text-align: center;
+      padding: 15px;
+    }
+    h3 b {
+      font-size: 2rem;
+      font-weight: 3000;
+      color: #920592;
+    }
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    .containern input:checked ~ .checkmark:after {
+      display: block;
+    }
+    .containern .checkmark:after {
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    .whole {
+      margin-top: 9%;
+      transform: scale(1.3);
+      width: 70%;
+      margin-left: 15%;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+      color: white;
+    }
+    h1 {
+      margin-top: 4rem;
+    }
+    .chart {
+      text-align: center;
+      margin-top: 5rem;
+    }
+
+    .centered-image {
+      display: inline-block;
+      width: 25rem;
+      height: 15rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .whole {
+        margin-top: 9%;
+        transform: scale(1.9);
+        width: 70%;
+        margin-left: 15%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-dark navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">FitnessHub</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="nanv">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="workouts.html">Workouts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.php">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link store" href="store.html"
+                ><img
+                  class="store"
+                  src="images/shop2.jpg"
+                  height="70px"
+                  width="80px"
+                  alt=""
+              /></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link store" href="cart.html"
+                ><img
+                  class="store store2"
+                  src="images/shop.png"
+                  height="50px"
+                  width="65px"
+                  alt=""
+              /></a>
+            </li>
+          </ul>
+          <div class="sign">
+            <a href="signup_login.php" class="sup">
+              <button class="signup">Signup | Login</button></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="whole">
+    <h3><b>B</b>ody <b>M</b>ass <b>I</b>ndex Calculator</h3>
+    <form class="form" id="form" onsubmit="return validateForm()">
+      <div class="row-one">
+        <input
+          type="text"
+          class="text-input"
+          id="age"
+          autocomplete="off"
+          required
+        />
+        <p class="text">Age</p>
+        <label class="containern">
+          <input type="radio" name="radio" id="f" />
+          <p class="text">Female</p>
+          <span class="checkmark"></span>
+        </label>
+        <label class="containern">
+          <input type="radio" name="radio" id="m" />
+          <p class="text">Male</p>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="row-two">
+        <input
+          type="text"
+          class="text-input"
+          id="height"
+          autocomplete="off"
+          required
+        />
+        <p class="text">Height (cm)</p>
+        <input
+          type="text"
+          class="text-input"
+          id="weight"
+          autocomplete="off"
+          required
+        />
+        <p class="text">Weight (kg)</p>
+      </div>
+      <button type="button" id="submit">Submit</button>
+    </form>
+  </div>
+  <script>
+    var age = document.getElementById("age");
+    var height = document.getElementById("height");
+    var weight = document.getElementById("weight");
+    var male = document.getElementById("m");
+    var female = document.getElementById("f");
+    var form = document.getElementById("form");
+    function validateForm() {
+      if (
+        age.value == "" ||
+        height.value == "" ||
+        weight.value == "" ||
+        (male.checked == false && female.checked == false)
+      ) {
+        alert("All fields are required!");
+        document
+          .getElementById("submit")
+          .removeEventListener("click", countBmi);
+      } else {
+        countBmi();
+      }
+    }
+    document.getElementById("submit").addEventListener("click", validateForm);
+    function countBmi() {
+      var p = [age.value, height.value, weight.value];
+      if (male.checked) {
+        p.push("male");
+      } else if (female.checked) {
+        p.push("female");
+      }
+      form.reset();
+      var bmi = Number(p[2]) / (((Number(p[1]) / 100) * Number(p[1])) / 100);
+      var result = "";
+      if (bmi < 18.5) {
+        result = "Underweight";
+      } else if (18.5 <= bmi && bmi <= 24.9) {
+        result = "Healthy";
+      } else if (25 <= bmi && bmi <= 29.9) {
+        result = "Overweight";
+      } else if (30 <= bmi && bmi <= 34.9) {
+        result = "Obese";
+      } else if (35 <= bmi) {
+        result = "Extremely obese";
+      }
+      var h1 = document.createElement("h1");
+      var h2 = document.createElement("h2");
+      var t = document.createTextNode(result);
+      var b = document.createTextNode("BMI: ");
+      var r = document.createTextNode(parseFloat(bmi).toFixed(2));
+      h1.appendChild(t);
+      h2.appendChild(b);
+      h2.appendChild(r);
+      document.body.appendChild(h1);
+      document.body.appendChild(h2);
+      document.getElementById("submit").removeEventListener("click", countBmi);
+      document
+        .getElementById("submit")
+        .removeEventListener("click", validateForm);
+    }
+    document.getElementById("submit").addEventListener("click", countBmi);
+  </script>
+  <div class="chart">
+    <img src="images/bmi.png" alt="" class="centered-image" />
+  </div>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"
+  ></script>
+</body>
